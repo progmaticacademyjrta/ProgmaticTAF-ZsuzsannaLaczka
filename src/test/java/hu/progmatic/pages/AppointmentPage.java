@@ -19,6 +19,9 @@ public class AppointmentPage {
     By medicaidRadioLocator = By.id("radio_program_medicaid");
     By visitDateInputLocator = By.id("txt_visit_date");
     By bookAppointmentButtonLocator = By.id("btn-book-appointment");
+    By menuIconLocator = By.className("toggle");
+    By logoutMenuIconLocator = By.linkText("Logout");
+    By loginMenuIconLocator = By.linkText("Login");
 
     public AppointmentPage(WebDriver driver, WebDriverWait wait) {
         this.driver = driver;
@@ -62,5 +65,16 @@ public class AppointmentPage {
         WebElement bookAppointmentButton = driver.findElement(bookAppointmentButtonLocator);
         bookAppointmentButton.click();
         System.out.println("Book Appointment button is clicked.");
+    }
+
+    public void logout(){
+        WebElement menuIcon = driver.findElement(menuIconLocator);
+        menuIcon.click();
+        WebElement logoutMenuIcon = driver.findElement(logoutMenuIconLocator);
+        logoutMenuIcon.click();
+        menuIcon = wait.until(ExpectedConditions.elementToBeClickable(menuIconLocator));
+        menuIcon.click();
+        Assert.assertTrue(driver.findElement(loginMenuIconLocator).isDisplayed());
+        System.out.println("Logout was successful.");
     }
 }
