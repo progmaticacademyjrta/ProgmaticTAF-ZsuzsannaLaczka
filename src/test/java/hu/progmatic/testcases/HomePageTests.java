@@ -17,6 +17,7 @@ public class HomePageTests extends DriverBaseTest {
     @Test(groups = "regression", description = "TC02: Make Appointment button is clickable and navigates to the Login page.")
     public void makeAppointmentButtonIsClickableTest(){
         homePage = new HomePage(driver, wait);
+        homePage.loadHomePage();
         homePage.makeAppointmentButtonClick();
         Assert.assertEquals(driver.getCurrentUrl(), "https://katalon-demo-cura.herokuapp.com/profile.php#login");
         System.out.println("Make Appointment button navigates to the Login page.");
