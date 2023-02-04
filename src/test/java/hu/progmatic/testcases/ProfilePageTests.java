@@ -9,7 +9,7 @@ public class ProfilePageTests extends DriverBaseTest {
 
     ProfilePage profilePage;
 
-    @Test(description = "TC01: Profile page loads properly and the Logout button is displayed.")
+    @Test(groups = "regression", description = "TC01: Profile page loads properly and the Logout button is displayed.")
     public void profilePageLoadedTest(){
         profilePage = new ProfilePage(driver, wait);
         profilePage.loadProfilePage();

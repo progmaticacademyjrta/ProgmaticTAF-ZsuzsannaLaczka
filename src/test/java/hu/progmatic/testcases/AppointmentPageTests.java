@@ -11,13 +11,13 @@ public class AppointmentPageTests extends DriverBaseTest {
 
     AppointmentPage appointmentPage;
 
-    @Test(description = "TC01: Appointment booking page loads properly and the header is displayed.")
+    @Test(groups = "regression", description = "TC01: Appointment booking page loads properly and the header is displayed.")
     public void appointmentPageLoadedTest(){
         appointmentPage = new AppointmentPage(driver, wait);
         appointmentPage.loadAppointmentPage();
     }
 
-    @Test(description = "TC02: Appointment booking works with filling required fields.")
+    @Test(groups = "regression", description = "TC02: Appointment booking works with filling required fields.")
     public void appointmentBookingWorksTest(){
         appointmentPage = new AppointmentPage(driver, wait);
         appointmentPage.loadAppointmentPage();

@@ -13,7 +13,7 @@ public class EndToEndTests extends DriverBaseTest {
     AppointmentPage appointmentPage;
     ProfilePage profilePage;
 
-    @Test(description = "TC01: Login, appointment booking and logout works together smoothly.")
+    @Test(groups = "regression", description = "TC01: Login, appointment booking and logout works together smoothly.")
     public void loginBookingLogoutTest(){
         appointmentPage = new AppointmentPage(driver, wait);
         appointmentPage.loadAppointmentPage();

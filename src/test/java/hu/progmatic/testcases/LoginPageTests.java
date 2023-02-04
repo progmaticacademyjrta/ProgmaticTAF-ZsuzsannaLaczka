@@ -11,13 +11,13 @@ public class LoginPageTests extends DriverBaseTest {
 
     LoginPage loginPage;
 
-    @Test(description = "TC01: Login page loaded properly.")
+    @Test(groups = "regression", description = "TC01: Login page loaded properly.")
     public void loginPageLoadedTest(){
         loginPage = new LoginPage(driver, wait);
         loginPage.loadLoginPage();
     }
 
-    @Test(description = "TC02: Try login with valid username and wrong password.")
+    @Test(groups = "regression", description = "TC02: Try login with valid username and wrong password.")
     public void validUsernameWrongPwdTest(){
         loginPage = new LoginPage(driver, wait);
         loginPage.loadLoginPage();
